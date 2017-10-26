@@ -1,0 +1,12 @@
+1.在eclipse里面配置tomcat
+  打开eclipse -- 点击 window -- 点击preferences -- 点击server -- 点击 runtime ....点击   add -- 选择7.0的版本信息 -- 点击next -- 点击 browse 吧tomcat本地的文件夹导入-- 然后点击
+ finish  -- 在点击ok
+
+
+
+作业 : 
+	1.从页面获取值判断数据库是否存在?
+	2.从页面获取值，添加到数据库;
+	3.从页面获取值对数据库进行修改;
+	4.从页面获取值，根据指定的值删除数据;
+	

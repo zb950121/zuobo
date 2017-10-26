@@ -1,0 +1,54 @@
+create table catalog(
+ id int primary key auto_increment,
+ name varchar(10),
+ descr varchar(80),
+ parent_id int not null,
+ constraint catalog_parent_id_fk foreign key (parent_id) references catalog(id));
+
+
+永恒情缘：2394853
+create procedure transfer7(acc1 varchar(10),acc2 varchar(10),m double,ret bool)
+begin
+	declare mm double;
+	select money into mm from bank where username=acc1;
+	if (m<mm) then
+		set ret=1;
+		update bank set money=money-m where username=acc1;
+		update bank set money=money+m where username=acc2;
+		set ret=true;
+	else
+		set ret=0;
+	end if;
+end//
+
+
+
+ create trigger testref before insert on test1
+ fore each row begin;
+ insert into test2 set a2=new.a1;
+end//
+有一个关于公司员工信息的数据库empinfo。部门表和员工基本信息表是其中的两个表，表中信息如下：
+部门表depts （ dept_id、dept_name、description）
+说明：
+dept_id  部门编号  
+dept_name 部门名称 
+description 部门描述
+员工表employees（id、name、gender、dept_id、join_time、salary、address、age、des）
+说明：
+id员工号 
+name员工姓名
+gender性别 
+dept_id所在部门
+join_time加入时间
+salary工资 
+address地址  
+age年龄
+des描述
+1.分析各个表之间的关系（主外键引用关系），写出建表语句
+create table depts(dept_id int,dept_name varchar,description varchar);
+create table employees(id int,name varchar,gender varchar,);
+2.查询除了名字叫张三以外的员工的记录
+3.查询薪水在2000-5000之间的员工记录
+4.查询名字以“张”开头的员工的记录
+5.查询出平均月薪最高的部门编号与名字
+6.为employees表的name列创建索引
